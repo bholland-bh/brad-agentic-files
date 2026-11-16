@@ -1,15 +1,26 @@
 # brad-agentic-files
 
-Agentic configuration for blue team
+Agentic configuration for brad
 
 ## agent setup
+
+### steering install
+
+```shell
+./install.sh
+```
+
+This symlinks every `steering/*.md` file into `~/.kiro/steering`, so edits in this repo apply the next time the agent starts. Re-run it after adding or renaming steering files; it also removes links to files that no longer exist. An existing file in `~/.kiro/steering` that differs from the repo copy is backed up to `<name>.bak` before it is replaced.
+
+> [!NOTE]
+> `kiro-cli chat --v3` skips symlinked steering files ([kirodotdev/Kiro#9787](https://github.com/kirodotdev/Kiro/issues/9787)). The default v2 engine loads them.
 
 ## skills
 
 ### install
 
 ```shell
-npx skills add bamboohealth/brad-agentic-files --global --skill '*' --agent kiro-cli
+npx skills add bholland-bh/brad-agentic-files --global --skill '*' --agent kiro-cli
 ```
 
 ### update
@@ -24,10 +35,17 @@ ______________________________________________________________________
 
 mdformat is used to enforce style guides across markdown documents. Jenkins also enforces this.
 
+[mise](https://mise.jdx.dev) installs the dev tools pinned in `mise.toml` (mdformat, yamlfix, and yamllint):
+
 ```shell
-brew install pipx yamllint
-pipx install mdformat yamlfixer-opt-nc
-pipx inject mdformat mdformat-gfm mdformat-frontmatter mdformat-footnote mdformat-gfm-alerts
+curl -fsSL https://mise.run | sh
+echo 'eval "$(~/.local/bin/mise activate zsh)"' >> "${ZDOTDIR:-$HOME}/.zshrc"
+```
+
+Open a new terminal, then install the tools from the repo root:
+
+```shell
+mise install
 ```
 
 ### pre-commit
