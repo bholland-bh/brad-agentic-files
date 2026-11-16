@@ -1,0 +1,14 @@
+wrap = "no"         # options: {"keep", "no", INTEGER} -- End result is smaller PR diffs
+number = true        # options: {false, true} -- don't replace numbered lists with 1.
+end_of_line = "lf"    # options: {"lf", "crlf", "keep"}
+validate = true       # options: {false, true} -- ensure valid markdown before formatting
+
+extensions = [
+  "gfm",
+  "gfm_alerts",
+  "frontmatter",
+  "footnote"
+]
+
+[plugin.tables]
+compact_tables = true # Removes padding around items in table. -- End Result is smaller PR diffs

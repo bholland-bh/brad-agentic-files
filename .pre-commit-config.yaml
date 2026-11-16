@@ -1,0 +1,26 @@
+---
+repos:
+  - repo: https://github.com/bamboohealth/blue-precommit-hooks
+    rev: 1.1.0
+    hooks:
+      - id: mise-lock
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: trailing-whitespace
+        exclude: ^(\.md)$
+      - id: end-of-file-fixer  # Makes sure files end in a newline and only a newline.
+        exclude: ^(\.md)$
+  - repo: https://github.com/lyz-code/yamlfix
+    rev: 1.19.1
+    hooks:
+      - id: yamlfix
+  - repo: https://github.com/executablebooks/mdformat
+    rev: 1.0.0
+    hooks:
+      - id: mdformat
+        additional_dependencies:
+          - mdformat-footnote
+          - mdformat-frontmatter
+          - mdformat-gfm
+          - mdformat-gfm-alerts

@@ -1,0 +1,4 @@
+[tools]
+"pipx:yamlfix" = "latest"
+yamllint = "latest"
+"pipx:mdformat" = "latest"
