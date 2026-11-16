@@ -1,6 +1,6 @@
 # brad-agentic-files
 
-Agentic configuration for blue team
+Agentic configuration for brad
 
 ## agent setup
 
