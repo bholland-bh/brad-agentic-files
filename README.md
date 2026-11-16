@@ -38,7 +38,13 @@ mdformat is used to enforce style guides across markdown documents. Jenkins also
 [mise](https://mise.jdx.dev) installs the dev tools pinned in `mise.toml` (mdformat, yamlfix, and yamllint):
 
 ```shell
-brew install mise
+curl -fsSL https://mise.run | sh
+echo 'eval "$(~/.local/bin/mise activate zsh)"' >> "${ZDOTDIR:-$HOME}/.zshrc"
+```
+
+Open a new terminal, then install the tools from the repo root:
+
+```shell
 mise install
 ```
 
