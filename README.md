@@ -35,10 +35,11 @@ ______________________________________________________________________
 
 mdformat is used to enforce style guides across markdown documents. Jenkins also enforces this.
 
+[mise](https://mise.jdx.dev) installs the dev tools pinned in `mise.toml` (mdformat, yamlfix, and yamllint):
+
 ```shell
-brew install pipx yamllint
-pipx install mdformat yamlfixer-opt-nc
-pipx inject mdformat mdformat-gfm mdformat-frontmatter mdformat-footnote mdformat-gfm-alerts
+brew install mise
+mise install
 ```
 
 ### pre-commit
