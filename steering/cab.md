@@ -13,7 +13,7 @@ Create CAB tickets with `createJiraIssue`:
 
 | Field | ID | Default |
 | -- | -- | -- |
-| Change type | `customfield_11852` | Self Service (`23806`) |
+| Change type | `customfield_11852` | Self Service (`23806`). Confirm first, see below |
 | Impact | `customfield_11851` | Minor / Localized (`24806`) |
 | Change risk | `customfield_11853` | Low (`24810`) |
 | Team Ownership | `customfield_12675` | Blue (`23794`) |
@@ -25,6 +25,20 @@ Create CAB tickets with `createJiraIssue`:
 | Test plan | `customfield_12049` |  |
 
 Always default Team Ownership to Blue, even when another team does the work.
+
+### Change Type
+
+Before creating the ticket, ask the user to confirm the change type. Default to Self Service.
+
+| Change type | ID | Use for |
+| -- | -- | -- |
+| Self Service | `23806` | Most requests (default) |
+| Application Release | `23788` | A scheduled application release |
+| Off Cycle Release | `23791` | A release outside the normal release schedule |
+| Hotfix | `23790` | An urgent production fix |
+| Rollback | `23792` | Reverting a previous change |
+
+The field takes one value. If more than one type applies, ask the user which one to use.
 
 ## Formatting
 
