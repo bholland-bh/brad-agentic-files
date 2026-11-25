@@ -39,6 +39,17 @@ For `customfield_12047`, `customfield_12791`, `customfield_12048`, and `customfi
 
 After creating or editing a ticket, fetch it with `expand: renderedFields`. Check that none of those fields contain `{{`, `{code`, or `|smart-link]`.
 
+## Link to a BLUE Ticket
+
+Link every CAB ticket to its BLUE ticket.
+
+1. Before creating the CAB ticket, find the BLUE ticket with the "Find or Create a Ticket" steps in `blue-jira.md`. List the matches and let the user choose. Don't create the CAB ticket until a BLUE ticket is chosen.
+2. After creating the CAB ticket, link it to the BLUE ticket with `createIssueLink`, using `Relates` unless the user states another relationship.
+3. Put the BLUE key in Description of Change (`customfield_13183`) as a markdown link: `[BLUE-123](https://hbuco.atlassian.net/browse/BLUE-123)`. Don't put it in the plain-text fields.
+4. If the link fails, tell the user which ticket failed and why.
+
+If the work is `BLUE-0`, skip this section. Never link to, mention, or hyperlink `BLUE-0` on a CAB ticket.
+
 ## Commands in the Implementation Plan
 
 Include the exact command for the team doing the change. Resolve ARNs, account IDs, and regions from the live resource or a completed CAB ticket for the same resource, and say which one you used.
