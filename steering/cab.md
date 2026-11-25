@@ -35,7 +35,7 @@ For `customfield_12047`, `customfield_12791`, `customfield_12048`, and `customfi
 - Write plain text only: no backticks, code fences, bold, lists, or markdown links.
 - Put each CLI command on one line, without `\` continuations.
 - Separate paragraphs with a blank line.
-- Bare URLs become [url|url|smart-link] in plain-text fields. Put links in customfield_13183 instead.
+- Don't include URLs. The MCP turns bare URLs into `[url|url|smart-link]`, which these fields show literally. Put links in `customfield_13183` instead.
 
 After creating or editing a ticket, fetch it with `expand: renderedFields`. Check that none of those fields contain `{{`, `{code`, or `|smart-link]`.
 
